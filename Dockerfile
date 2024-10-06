@@ -19,7 +19,6 @@ COPY src ./src
 RUN chmod +x ./gradlew
 
 # Build the application without running tests
-RUN ./gradlew clean build --no-daemon
 
 # Create a new image for running the application
 FROM openjdk:21-jdk-slim

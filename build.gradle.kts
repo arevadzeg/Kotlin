@@ -21,7 +21,7 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:2.0.0") // Adjust the version as necessary
     implementation("io.ktor:ktor-serialization:2.0.0") // Ktor serialization support
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0") // Add this line
-    implementation("org.xerial:sqlite-jdbc-3.46.1.3.jar") // SQLite driver
+    implementation("org.xerial:sqlite-jdbc:3.36.0.3") // SQLite driver
 
     implementation("com.zaxxer:HikariCP:5.0.1") // Connection pooling library (optional, but good for managing connections)
     implementation("io.ktor:ktor-server-cors-jvm:2.3.4") // Ensure you're using the correct version
@@ -42,7 +42,7 @@ tasks.jar {
 
 kotlin {
     jvmToolchain {
-        languageVersion.set(JavaLanguageVersion.of(22)) // Set to Java 21
+        languageVersion.set(JavaLanguageVersion.of(21)) // Set to Java 21
     }
 }
 

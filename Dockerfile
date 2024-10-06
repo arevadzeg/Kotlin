@@ -1,4 +1,4 @@
-# Use the official Kotlin image
+# Build stage
 FROM openjdk:21-jdk-slim AS build
 
 # Set the working directory
@@ -19,8 +19,12 @@ COPY src ./src
 RUN chmod +x ./gradlew
 
 # Build the application without running tests
+RUN ./gradlew clean build --no-daemon -x test
 
-# Create a new image for running the application
+# List files in /app/build/libs/ to debug if the JAR is created
+RUN ls -l /app/build/libs/
+
+# Application stage
 FROM openjdk:21-jdk-slim
 
 # Copy the built application from the previous stage

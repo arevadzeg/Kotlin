@@ -1,5 +1,5 @@
 # Build stage
-FROM openjdk:17-jdk-slim AS build
+FROM openjdk:21-jdk-slim AS build
 
 # Set the working directory
 WORKDIR /app
@@ -25,7 +25,7 @@ RUN ./gradlew clean build --no-daemon -x test
 RUN ls -l /app/build/libs/
 
 # Application stage
-FROM openjdk:17-jdk-slim
+FROM openjdk:21-jdk-slim
 
 # Copy the built application from the previous stage
 COPY --from=build /app/build/libs/*.jar /app/app.jar

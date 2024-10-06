@@ -22,7 +22,7 @@ RUN chmod +x ./gradlew
 RUN ./gradlew clean build --no-daemon
 
 # Create a new image for running the application
-FROM openjdk:17-jdk-slim
+FROM openjdk:21-jdk-slim
 
 # Copy the built application from the previous stage
 COPY --from=build /app/build/libs/*.jar /app/app.jar

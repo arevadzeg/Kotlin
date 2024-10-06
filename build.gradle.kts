@@ -29,6 +29,14 @@ application {
     mainClass.set("MainKt")
 }
 
+tasks.jar {
+    manifest {
+        attributes(
+            "Main-Class" to "MainKt"  // Use "MainKt" if no package is defined
+        )
+    }
+}
+
 kotlin {
     jvmToolchain {
         languageVersion.set(JavaLanguageVersion.of(21)) // Set to Java 21

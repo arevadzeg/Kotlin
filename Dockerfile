@@ -5,9 +5,12 @@ FROM openjdk:17-jdk-slim AS build
 WORKDIR /app
 
 # Copy the Gradle wrapper files
-COPY gradlew ./
-COPY gradlew.bat ./
-COPY build.gradle.kts settings.gradle.kts ./
+COPY gradlew ./gradlew
+COPY gradlew.bat ./gradlew.bat
+COPY gradle ./gradle
+
+# Copy the project build files
+COPY build.gradle.kts settings.gradle.kts gradle.properties ./
 
 # Copy the source code
 COPY src ./src
@@ -15,8 +18,8 @@ COPY src ./src
 # Make the gradlew script executable
 RUN chmod +x ./gradlew
 
-# Build the application
-RUN ./gradlew build -x test
+# Build the application without running tests
+RUN ./gradlew clean build --no-daemon
 
 # Create a new image for running the application
 FROM openjdk:17-jdk-slim

@@ -15,6 +15,8 @@ data class Scan(
 
 // Initialize the SQLite database
 fun initDatabase(): Connection {
+    Class.forName("org.sqlite.JDBC")
+
     val url = "jdbc:sqlite:scans.db"
     return DriverManager.getConnection(url).apply {
         createStatement().execute(

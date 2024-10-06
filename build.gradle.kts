@@ -22,6 +22,8 @@ dependencies {
     implementation("io.ktor:ktor-serialization:2.0.0") // Ktor serialization support
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0") // Add this line
     implementation("org.xerial:sqlite-jdbc:3.36.0.3") // SQLite driver
+    implementation("org.xerial.sqlite-jdbc:sqlite-jdbc:3.41.2.1") // Add this line
+
     implementation("com.zaxxer:HikariCP:5.0.1") // Connection pooling library (optional, but good for managing connections)
     implementation("io.ktor:ktor-server-cors-jvm:2.3.4") // Ensure you're using the correct version
     testImplementation(kotlin("test"))

@@ -1,6 +1,8 @@
 plugins {
     kotlin("jvm") version "2.0.20"
     application
+    id("com.github.johnrengelman.shadow") version "8.1.1" // Add this line
+
 }
 
 repositories {

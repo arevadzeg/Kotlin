@@ -39,7 +39,7 @@ tasks.jar {
 
 kotlin {
     jvmToolchain {
-        languageVersion.set(JavaLanguageVersion.of(21)) // Set to Java 21
+        languageVersion.set(JavaLanguageVersion.of(17)) // Set to Java 21
     }
 }
 
